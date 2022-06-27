@@ -76,8 +76,9 @@ def getQualityPlot(file_path, file_n):
 
 
     # add a 'lognormal' line
-    ax.plot(xaxis, lognorm.pdf(xaxis, sigma)*100, dot_style[file_n], label=label)
-
+    dot_index = file_n % len(dot_style)
+    ax.plot(xaxis, lognorm.pdf(xaxis, sigma)*100, dot_style[dot_index], label=label)
+    
 
 i = 0
 for file in file_path:
